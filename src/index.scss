@@ -10,7 +10,7 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
 
-    --black: #04152d;
+    --black: #093545;
     --black2: #041226;
     --black3: #020c1b;
     --black-lighter: #1c4b91;
@@ -26,8 +26,10 @@
     box-sizing: border-box;
 }
 
-body {
+body, html {
     background-color: var(--black);
+    margin: 0;
+    height: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -37,7 +39,7 @@ body {
 .skeleton {
     position: relative;
     overflow: hidden;
-    background-color: #0a2955;
+    background-color: #093545;
     &::after {
         position: absolute;
         top: 0;

@@ -7,7 +7,7 @@ import {FaCampground} from "react-icons/fa";
 import "./style.scss";
 
 const ListaEquipe = () => {
-    const { data, loading } = useFetch(`/campista/acampamento/102`);
+    const { data, loading } = useFetch(`/campista/acampamento/1352`);
     const { data: inscricoes, loading: loadingIncricoes } = useFetch(`/inscricao`);
     // const [equipe, setEquipe] = useState()
     var equipe;

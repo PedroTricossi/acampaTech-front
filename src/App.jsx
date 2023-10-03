@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route,Link } from "react-router-dom";
 import { fetchDataFromApi } from "./utils/api";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -13,31 +13,33 @@ import Forms from "./pages/forms/Forms";
 import PageNotFound from "./pages/404/PageNotFound";
 import Lista from "./pages/lista/listaInscricoes/Lista";
 import ListaEquipe from "./pages/lista/listaEquipe/ListaEquipe";
+import Login from "./components/Login/Login";
+import SignUp from "./components/Signup/Signup";
+import AuthService from "./utils/auth.service";
+
 
 
 function App() {
     const dispatch = useDispatch();
     const { url } = useSelector((state) => state.home);
     console.log(url);
+    const [currentUser, setCurrentUser] = useState(undefined);
 
     useEffect(() => {
         // fetchApiConfig();
         // genresCall();
     }, []);
 
-    // const fetchApiConfig = () => {
-    //     fetchDataFromApi("/configuration").then((res) => {
-    //         console.log(res);
+    useEffect(() => {
+        const user = AuthService.getCurrentUser();
+    
+        if (user) {
+          setCurrentUser(user);
+        //   setShowModeratorBoard(user.roles.includes("ROLE_MODERATOR"));
+        //   setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
+        }
+      }, []);
 
-    //         // const url = {
-    //         //     backdrop: res.images.secure_base_url + "original",
-    //         //     poster: res.images.secure_base_url + "original",
-    //         //     profile: res.images.secure_base_url + "original",
-    //         // };
-
-    //         dispatch(getApiConfiguration(url));
-    //     });
-    // };
 
     const genresCall = async () => {
         let promises = [];
@@ -49,7 +51,6 @@ function App() {
         });
 
         const data = await Promise.all(promises);
-        console.log(data);
         data.map(({ genres }) => {
             return genres.map((item) => (allGenres[item.id] = item));
         });
@@ -58,17 +59,20 @@ function App() {
     };
 
     return (
+
         <BrowserRouter>
-            <Header />
+            <Header />  
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path=":id" element={<Details />} />
-                <Route path="inscricao/:id" element={<Forms />} />
+                <Route path="inscricao/:acampamentoId/:campistaId" element={<Forms />} />
                 <Route path="minhasInscricoes" element={<Lista />} />
                 <Route path="minhaEquipe" element={<ListaEquipe />} />
+                <Route path="/login" element={<Login/>} />
+                <Route path="/signup" element={<SignUp/>} />
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
-            <Footer />
+            {/* <Footer /> */}
         </BrowserRouter>
     );
 }

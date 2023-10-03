@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -6,6 +6,10 @@ import "./style.scss";
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 import useFetch from "../../../hooks/useFetch";
 import PostDataToApi from "../../../utils/apiPost";
+import { useNavigate } from "react-router-dom";
+import userService from "../../../utils/user.service"
+import AuthService from "../../../utils/auth.service"
+import authHeader from "../../../utils/auth-header";
 
 interface inscricao {
     campistaId: number
@@ -26,45 +30,100 @@ let initialState: inscricao = {
 }
 
 const FormularioInscricao = () => {
+    const { acampamentoId, campistaId } = useParams()
 
-    const { id } = useParams()
-    const { data, loading } = useFetch(`/campista/1`);
+
     const [equipe, setEquipe] = useState('')
     const [familia, setFamilia] = useState('')
+
     const [inscricao, setInscricao] = useState<inscricao>(initialState)
     const [response, setResponse] = useState<response>()
 
+    const [currentUser, setCurrentUser] = useState(undefined);
+
+    const [campista, setCampista] = useState(undefined);
+    const [inscrito, setInscrito] = useState(undefined);
+
+    const navigate = useNavigate();
+
     const onChangeHandlerEquipe = (e: ChangeEvent<HTMLInputElement>) => {
-        setEquipe(e.target.value)
+        inscricao.equipePreferencia === "" ? setEquipe(e.target.value) : setEquipe(inscricao.equipePreferencia)
     }
 
     const onChangeHandlerFamilia = (e: ChangeEvent<HTMLInputElement>) => {
-        setFamilia(e.target.value)
+        inscricao.familiaresAcampamento === "" ? setFamilia(e.target.value) : setFamilia(inscricao.familiaresAcampamento)
     }
 
+    useEffect(() => {
+        const user = AuthService.getCurrentUser();
+
+        console.log(user);
+    
+        if (user) {
+          setCurrentUser(user);
+
+          userService.getUserBoard(`/campista/${user.campistaId}`).then(
+            (res) => {
+                setCampista(res.data);
+                console.log(res.data)
+            }
+          )
+
+          userService.getUserBoard(`/inscricao/campista/${user.campistaId}`).then(
+            (res) => {
+                setInscrito(res.data);
+                console.log(res.data)
+            }
+          )
+          
+        }
+
+      }, []);
 
 
-    const sumbitForm = (e: React.FormEvent<HTMLFormElement>) => {
+    const sumbitForm = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        inscricao.equipePreferencia = equipe;
-        inscricao.familiaresAcampamento = familia;
-        inscricao.acampamentoId = parseInt(id);
-        axios.post<response>('http://localhost:8080/api/v1/camp/inscricao', inscricao)
-        .then((response) => {
-          setResponse(response.data)
-          console.log(response.data)
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+        inscricao.acampamentoId = parseInt(acampamentoId!);
+        inscricao.equipePreferencia = equipe === "" ? inscrito.equipePreferencia : equipe;
+        inscricao.familiaresAcampamento = familia === "" ? inscrito.familiaresAcampamento : familia;
+        inscricao.campistaId = currentUser.campistaId;
+        
+        if(inscrito?.id === undefined){
+            console.log(inscricao);
+
+            await axios.post('http://localhost:8080/api/v1/inscricao', inscricao, { headers: authHeader() })
+                .then((response) => {
+                setResponse(response.data)
+                console.log(response.data)
+                })
+            .catch(function (error) {
+            console.log(error);
+            });
+        } 
+        // else {
+        //     console.log("USE PUT!!!");
+
+        //     await axios.put<response>(`http://localhost:8080/api/v1/camp/inscricao/${inscrito.id}`, inscricao)
+        //     .then((response) => {
+        //     setResponse(response.data)
+        //     console.log(response.data)
+        //     })
+        //     .catch(function (error) {
+        //     console.log(error);
+        //     });
+        // }
+
+        // alert("Voce se inscreveu com sucesso!!!")
+
+        // navigate(
+        //     `/`
+        // )
       }
 
     return(
         <div className="formularioInscricao">
-            {!loading ? (
-                <>
-                {
-                !!data && (
+            {
+            campista !== undefined ? (
             <React.Fragment>
                 <ContentWrapper>
                     <form id="form" className="form" onSubmit={sumbitForm}>
@@ -75,7 +134,7 @@ const FormularioInscricao = () => {
                             type="text"
                             id="name"
                             readOnly
-                            value={`${data.nome}`}
+                            value={`${campista.nome}`}
                         />
                     </div>
 
@@ -85,7 +144,7 @@ const FormularioInscricao = () => {
                             type="text"
                             id="CPF"
                             readOnly
-                            value={`${data.cpf}`}
+                            value={`${campista.cpf}`}
                         />
                     </div>
 
@@ -95,7 +154,7 @@ const FormularioInscricao = () => {
                             type="text"
                             id="RG"
                             readOnly
-                            value={`${data.rg}`}
+                            value={`${campista.rg}`}
                         />
                     </div>
 
@@ -105,7 +164,7 @@ const FormularioInscricao = () => {
                             type="text"
                             id="orgaoExpeditor"
                             readOnly
-                            value={`${data.orgaoExpeditor}`}
+                            value={`${campista.orgaoExpeditor}`}
                         />
                     </div>
 
@@ -115,7 +174,7 @@ const FormularioInscricao = () => {
                             type="text"
                             id="Nacionalidade"
                             readOnly
-                            value={`${data.nacionalidade}`}
+                            value={`${campista.nacionalidade}`}
                         />
                     </div>
 
@@ -125,17 +184,17 @@ const FormularioInscricao = () => {
                             type="text"
                             id="estadoCivil"
                             readOnly
-                            value={`${data.nacionalidade}`}
+                            value={`${campista.nacionalidade}`}
                         />
                     </div>
 
                     <div className="form-control">
-                        <label htmlFor="Data Nascimento">Data Nascimento</label>
+                        <label htmlFor="campista Nascimento">Data Nascimento</label>
                         <input
                             type="date"
                             id="Data Nascimento"
                             readOnly
-                            value={`${data.dataNascimento}`}
+                            value={`${campista.dataNascimento}`}
                         />
                     </div>
 
@@ -145,7 +204,7 @@ const FormularioInscricao = () => {
                             type="text"
                             id="endereco"
                             readOnly
-                            value={`${data.endereco}`}
+                            value={`${campista.endereco}`}
                         />
 
                     </div>
@@ -156,7 +215,7 @@ const FormularioInscricao = () => {
                             type="text"
                             id="Bairro"
                             readOnly
-                            value={`${data.bairro}`}
+                            value={`${campista.bairro}`}
                         />
                     </div>
 
@@ -166,7 +225,7 @@ const FormularioInscricao = () => {
                             type="text"
                             id="Cidade"
                             readOnly
-                            value={`${data.cidade}`}
+                            value={`${campista.cidade}`}
                         />
                     </div>
 
@@ -176,7 +235,7 @@ const FormularioInscricao = () => {
                             type="text"
                             id="Estado"
                             readOnly
-                            value={`${data.estado}`}
+                            value={`${campista.estado}`}
                         />
                     </div>
                     <div className="form-control">
@@ -185,7 +244,7 @@ const FormularioInscricao = () => {
                             type="text"
                             id="CEP"
                             readOnly
-                            value={`${data?.cep}`}
+                            value={`${campista?.cep}`}
                         />
                     </div>
 
@@ -196,47 +255,41 @@ const FormularioInscricao = () => {
                             id="equipe"
                             placeholder="Digite a equipe que gostaria de trabalhar.."
                             onChange={onChangeHandlerEquipe}
+                            defaultValue={
+                                // @ts-ignore: Object is possibly 'null'.
+                                inscrito.equipePreferencia
+                            }
                         />
                     </div>
 
                     <div className="form-control">
                         <label htmlFor="email">Possui Familiares fazendo ou trabalhando no acampamento?</label>
                         <input type="text" id="email" placeholder="Digite o nome dos familiares.."
-                        onChange={onChangeHandlerFamilia} />
+                        onChange={onChangeHandlerFamilia}
+                        defaultValue={
+                                // @ts-ignore: Object is possibly 'null'.
+                                inscrito.familiaresAcampamento
+                            }
+                        />
+
                     </div>
 
                     <div className="bntSubmmit"
  
                         >
-                        <button className="text" type="submit">Enviar</button>
+                        <button className="text" type="submit" >Enviar</button>
                     </div>
                 </form>
             </ContentWrapper>
-        </React.Fragment>)
-        }
-        </>
-    
-            ) : (
-                <div>
-                    <button 
-                        type="submit"
-                        onClick={ () =>
-                            PostDataToApi("/inscricao",
-                                {
-                                    campistaId: 1,
-                                    acampamentoId: id,
-                                    equipePreferencia: equipe,
-                                    familiaresAcampamento: familia
-                                }
-                            )
-                        }
-                    >Enviar</button>
-                </div>
+        </React.Fragment>
+        ) : (
+            <div></div>
             )
-            }
-      </div>
-
+        }
+        </div>
+                        
     )
+
 }
 
 export default FormularioInscricao;

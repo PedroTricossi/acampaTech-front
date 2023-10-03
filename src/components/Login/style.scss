@@ -1,0 +1,183 @@
+.dashboard-login {
+  background-color: #093545;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.dashboard-login .div {
+  background-color: #093545;
+  height: 100vh;
+  position: relative;
+  width: 1280px;
+}
+
+
+.dashboard-login .form {
+  height: 406px;
+  left: 466px;
+  position: absolute;
+  top: 157px;
+  width: 351px;
+}
+
+.dashboard-login .section-forgot {
+  height: 17px;
+  left: 27px;
+  position: absolute;
+  top: 320px;
+  width: 297px;
+}
+
+.dashboard-login .text-wrapper {
+  color: #20df7f;
+  font-family: "Montserrat-Medium", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  left: 165px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0;
+}
+
+.dashboard-login .text-wrapper-2 {
+  color: #ffffff;
+  font-family: "Montserrat-Medium", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  left: 25px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0;
+}
+
+.dashboard-login .rectangle {
+  background-color: #224957;
+  border-radius: 5px;
+  height: 17px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 18px;
+}
+
+.dashboard-login .login-btn {
+  background-color: #19ae64;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #0000004c;
+  box-sizing: border-box;
+  height: 45px;
+  left: 24px;
+  position: absolute;
+  top: 361px;
+  width: 302px;
+  color: #ffffff;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  white-space: nowrap;
+}
+
+
+.dashboard-login .password {
+  height: 45px;
+  left: 24px;
+  position: absolute;
+  top: 252px;
+  width: 302px;
+  background-color: #224957;
+  border-radius: 10px;
+  color: #ffffff;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 21px;
+  letter-spacing: 0;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.dashboard-login .password::placeholder {
+  color: #ffffff;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 21px;
+  letter-spacing: 3;
+  line-height: 20px;
+  position: relative;
+  text-align: center;
+  top: 13px;
+  white-space: nowrap;
+}
+
+.dashboard-login .username  {
+  color: #ffffff;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 18px;
+  letter-spacing: 0;
+  line-height: 20px;
+  position: relative;
+  text-align: center;
+  top: 12px;
+  white-space: nowrap;
+  height: 45px;
+  left: 24px;
+  position: relative;
+  top: 175px;
+  width: 302px;
+  background-color: #224957;
+  border-radius: 10px;
+}
+
+.dashboard-login .username::placeholder {
+  color: #ffffff;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 18px;
+  letter-spacing: 10px;
+  line-height: 20px;
+  position: relative;
+  text-align: center;
+  top: 12px;
+  white-space: nowrap;
+}
+
+.dashboard-login .username::placeholder {
+  color: #ffffff;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 18px;
+  letter-spacing: 0;
+  line-height: 20px;
+  position: relative;
+  text-align: center;
+  top: 12px;
+  white-space: nowrap;
+}
+
+
+.dashboard-login .text-wrapper-5 {
+  color: #ffffff;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 64px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  top: 0;
+}

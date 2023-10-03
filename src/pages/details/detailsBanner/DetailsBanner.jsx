@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
+import axios from "axios";
 import dayjs from "dayjs";
 
 import "./style.scss";
@@ -12,13 +12,38 @@ import useFetch from "../../../hooks/useFetch";
 import Img from "../../../components/lazyLoadImage/Img.jsx";
 import PosterFallback from "../../../assets/no-poster.png";
 import {FaCampground} from "react-icons/fa";
-import PostDataToApi from "../../../utils/apiPost";
+import userService from "../../../utils/user.service"
+import AuthService from "../../../utils/auth.service"
 
 const DetailsBanner = () => {
     const { id } = useParams();
-    const { data: campista, loading: loadingCampista } = useFetch(`/acampamentoTrabalhado/1`);
     const { data, loading } = useFetch(`/acampamento/${id}`);
+    const [pode, setPode] = useState('')
+    const [currentUser, setCurrentUser] = useState(undefined);
+    const [podeTrabalhar, setpodeTrabalhar] = useState({ hits: [] });
+    
+    
     const navigate = useNavigate();
+
+    
+
+    useEffect(() => {
+        const user = AuthService.getCurrentUser();
+
+        console.log(user);
+    
+        if (user) {
+          setCurrentUser(user);
+          console.log("oii");
+          userService.getUserBoard(`/acampamento/campista/${user.campistaId}/acampamento/${id}/permission`).then(
+            (res) => {
+                setpodeTrabalhar(res.data);
+                console.log(res.data)
+            }
+          )
+          
+        }
+      }, []);
     
 
     const toHoursAndMinutes = (totalMinutes) => {
@@ -26,9 +51,12 @@ const DetailsBanner = () => {
         const minutes = totalMinutes % 60;
         return `${hours}h${minutes > 0 ? ` ${minutes}m` : ""}`;
     };
+    
+
 
 
     return (
+        
         <div className="detailsBanner">
             {
             !loading ? (
@@ -70,24 +98,10 @@ const DetailsBanner = () => {
                                         </div>
                                         
                                         {
-                                        !loadingCampista ? (
-                                            campista[0].acampamentoId == 104 ? (<div
+                                        !loading ? (
+                                            podeTrabalhar ? (<div
                                                 className="playbtn"
-                                                    onClick={() => {
-                                                        // console.log("CLICOU")
-                                                        // PostDataToApi("/inscritos",
-                                                        // {
-                                                        //     campistaId: campista[0].campistaId,
-                                                        //     acampamentoId: campista[0].acampamentoId,
-                                                        //     inscricaoID: 1
-                                                        // }
-                                                        // );
-                                                        navigate(
-                                                            `/inscricao/${
-                                                                id
-                                                            }`
-                                                        )
-                                                    }}
+                                                    onClick={() => {navigate(`/inscricao/${id}/${currentUser.id}`)}}
                                                 >
                                                     <button className="text">
                                                     <FaCampground />
@@ -96,10 +110,6 @@ const DetailsBanner = () => {
                                             </div>) : (
                                                 <div
                                                 className="playbtn"
-                                                    // onClick={() => {
-                                                    //     setShow(true);
-                                                    //     setVideoId(video.key);
-                                                    // }}
                                                 >
                                                     <button className="text">
                                                     <FaCampground />

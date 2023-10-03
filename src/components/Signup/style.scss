@@ -1,0 +1,542 @@
+.dashboard-login-dark {
+  background-color: #093545;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.dashboard-login-dark .div {
+  background-color: #093545;
+  height: 100vh;
+  position: relative;
+  width: 1280px;
+}
+
+
+.dashboard-login-dark .form {
+  height: 140vh;
+  left: 28%;
+  position: absolute;
+  width: 30vw;
+  top:100px;
+}
+
+.dashboard-login-dark .section-forgot {
+  height: 17px;
+  left: 27px;
+  position: absolute;
+  top: 320px;
+  width: 297px;
+}
+
+.dashboard-login-dark .text-wrapper {
+  color: #20df7f;
+  font-family: "Montserrat-Medium", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  left: 165px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0;
+}
+
+.dashboard-login-dark .text-wrapper-2 {
+  color: #ffffff;
+  font-family: "Montserrat-Medium", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  left: 25px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0;
+}
+
+.dashboard-login-dark .rectangle {
+  background-color: #224957;
+  border-radius: 5px;
+  height: 17px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 18px;
+}
+
+.dashboard-login-dark .login-btn {
+  background-color: #19ae64;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px #0000004c;
+  box-sizing: border-box;
+  height: 45px;
+  left: 24px;
+  position: absolute;
+  top: 120vh;
+  width: 32vw;
+  color: #ffffff;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  white-space: nowrap;
+  margin-bottom: 30px;
+}
+
+
+.dashboard-login-dark .password {
+  height: 35px;
+  position: absolute;
+  width: 32vw;
+  background-color: #224957;
+  border-radius: 10px;
+  color: #ffffff;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  top: 6vh;
+  left: 25px;
+}
+
+.dashboard-login-dark .password::placeholder {
+  color: #ffffff;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 21px;
+  letter-spacing: 3;
+  line-height: 20px;
+  position: relative;
+  text-align: center;
+  top: 13px;
+  white-space: nowrap;
+}
+
+.dashboard-login-dark .username  {
+  color: #ffffff;
+  height: 35px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #224957;
+  border-radius: 10px;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  width: 32vw;
+  position: relative;
+  letter-spacing: 0;
+  top: 0;
+  left: 25px;
+}
+
+.dashboard-login-dark .username::placeholder {
+  color: #ffffff;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 18px;
+  letter-spacing: 10px;
+  line-height: 20px;
+  position: relative;
+  text-align: center;
+  top: 12px;
+  white-space: nowrap;
+}
+
+.dashboard-login-dark .nome  {
+  color: #ffffff;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  height: 35px;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #224957;
+  border-radius: 10px;
+  line-height: 20px;
+  position: relative;
+  text-align: center;
+  width: 32vw;
+  top: 8vh;
+  left: 25px;
+}
+
+.dashboard-login-dark .email  {
+  color: #ffffff;
+  height: 35px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #224957;
+  border-radius: 10px;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  top: 0%;
+  width: 32vw;
+  position: absolute;
+  top: 18vh;
+  left: 25px;
+}
+
+.dashboard-login-dark .nacionalidade  {
+  color: #ffffff;
+  height: 35px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #224957;
+  border-radius: 10px;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  top: 0%;
+  width: 32vw;
+  position: absolute;
+  top: 24vh;
+  left: 25px;
+}
+
+.dashboard-login-dark .estadoCivil  {
+  color: #ffffff;
+  height: 35px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #224957;
+  border-radius: 10px;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  top: 0%;
+  width: 32vw;
+  position: absolute;
+  top: 30vh;
+  left: 25px;
+}
+
+.dashboard-login-dark .escolaridade  {
+  color: #ffffff;
+  height: 35px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #224957;
+  border-radius: 10px;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  top: 0%;
+  width: 32vw;
+  position: absolute;
+  top: 36vh;
+  left: 25px;
+}
+
+.dashboard-login-dark .dataNascimento  {
+  color: #ffffff;
+  height: 35px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #224957;
+  border-radius: 10px;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  top: 0%;
+  width: 32vw;
+  position: absolute;
+  top: 42vh;
+  left: 25px;
+}
+
+.dashboard-login-dark .rg  {
+  color: #ffffff;
+  height: 35px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #224957;
+  border-radius: 10px;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  top: 0%;
+  width: 32vw;
+  position: absolute;
+  top: 48vh;
+  left: 25px;
+}
+
+.dashboard-login-dark .orgaoExpeditor  {
+  color: #ffffff;
+  height: 35px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #224957;
+  border-radius: 10px;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  top: 0%;
+  width: 32vw;
+  position: absolute;
+  left: 25px;
+  top: 54vh;
+}
+
+.dashboard-login-dark .cpf  {
+  color: #ffffff;
+  height: 35px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #224957;
+  border-radius: 10px;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  top: 0%;
+  width: 32vw;
+  position: absolute;
+  left: 25px;
+  top: 60vh;
+}
+
+.dashboard-login-dark .endereco  {
+  color: #ffffff;
+  height: 35px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #224957;
+  border-radius: 10px;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  top: 0%;
+  width: 32vw;
+  position: absolute;
+  left: 25px;
+  top: 66vh;
+}
+
+.dashboard-login-dark .bairro  {
+  color: #ffffff;
+  height: 35px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #224957;
+  border-radius: 10px;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  top: 0%;
+  width: 32vw;
+  position: absolute;
+  left: 25px;
+  top: 72vh;
+}
+
+.dashboard-login-dark .cidade  {
+  color: #ffffff;
+  height: 35px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #224957;
+  border-radius: 10px;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  top: 0%;
+  width: 32vw;
+  position: absolute;
+  left: 25px;
+  top: 78vh;
+}
+
+.dashboard-login-dark .estado  {
+  color: #ffffff;
+  height: 35px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #224957;
+  border-radius: 10px;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  top: 0%;
+  width: 32vw;
+  position: absolute;
+  left: 25px;
+  top: 84vh;
+}
+
+.dashboard-login-dark .cep  {
+  color: #ffffff;
+  height: 35px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #224957;
+  border-radius: 10px;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  top: 0%;
+  width: 32vw;
+  position: absolute;
+  left: 25px;
+  top: 90vh;
+}
+
+.dashboard-login-dark .h3CheckBox  {
+  color: #ffffff;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-weight: 400;
+  white-space: nowrap;
+  position: absolute;
+  left: 25px;
+  top: 96vh;
+}
+
+.dashboard-login-dark .AcampamentoJuvenil  {
+  color: #ffffff;
+  height: 20px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 10px;
+  line-height: 20px;
+  white-space: nowrap;
+  top: 0%;
+  position: absolute;
+  left: 25px;
+  top: 98.5vh;
+}
+
+.dashboard-login-dark .AcampamentoCasais  {
+  color: #ffffff;
+  height: 20px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 10px;
+  line-height: 20px;
+  white-space: nowrap;
+  top: 0%;
+  position: absolute;
+  left: 25px;
+  top: 101vh;
+}
+
+.dashboard-login-dark .AcampamentoJoam  {
+  color: #ffffff;
+  height: 20px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 10px;
+  line-height: 20px;
+  white-space: nowrap;
+  top: 0%;
+  position: absolute;
+  left: 25px;
+  top: 103.5vh;
+}
+
+.dashboard-login-dark .AcampamentoFac  {
+  color: #ffffff;
+  height: 20px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 10px;
+  line-height: 20px;
+  white-space: nowrap;
+  top: 0%;
+  position: absolute;
+  left: 25px;
+  top: 106vh;
+}
+
+.dashboard-login-dark .AcampamentoCes  {
+  color: #ffffff;
+  height: 20px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 10px;
+  line-height: 20px;
+  white-space: nowrap;
+  top: 0%;
+  position: absolute;
+  left: 25px;
+  top: 108.5vh;
+}
+
+.dashboard-login-dark .AcampamentoMirim  {
+  color: #ffffff;
+  height: 20px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 10px;
+  line-height: 20px;
+  white-space: nowrap;
+  top: 0%;
+  position: absolute;
+  left: 25px;
+  top: 111vh;
+}
+
+.dashboard-login-dark .AcampamentoMaanaim  {
+  color: #ffffff;
+  height: 20px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 10px;
+  line-height: 20px;
+  white-space: nowrap;
+  top: 0%;
+  position: absolute;
+  left: 25px;
+  top: 113.5vh;
+}
+
+.dashboard-login-dark .AcampamentoMulheres  {
+  color: #ffffff;
+  height: 20px;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 10px;
+  line-height: 20px;
+  white-space: nowrap;
+  top: 0%;
+  position: absolute;
+  left: 25px;
+  top: 116vh;
+}
+
+.dashboard-login-dark .text-wrapper-5 {
+  color: #ffffff;
+  font-family: "Lexend Deca-Regular", Helvetica;
+  font-size: 64px;
+  font-weight: 400;
+  letter-spacing: 0;
+  position: relative;
+  text-align: center;
+  top: 1px;
+}

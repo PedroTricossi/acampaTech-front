@@ -8,7 +8,7 @@ import useFetch from "../../../hooks/useFetch";
 const Popular = () => {
     const [endpoint, setEndpoint] = useState("movie");
 
-    const { data, loading } = useFetch(`/proximosAcampamentos`);
+    const { data, loading } = useFetch(`/acampamento/proximosAcampamentos`);
 
     return (
         <div className="carouselSection">

@@ -9,6 +9,9 @@ import "./style.scss";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import logo from "../../assets/ASPEL.jpeg";
 import useFetch from "../../hooks/useFetch";
+import userService from "../../utils/user.service"
+import AuthService from "../../utils/auth.service"
+import EventBus from "../../common/EventBus";
 
 
 const Header = () => {
@@ -19,8 +22,32 @@ const Header = () => {
     const [showSearch, setShowSearch] = useState("");
     const navigate = useNavigate();
     const location = useLocation();
+    const [data, setData] = useState({ hits: [] });
+    const [currentUser, setCurrentUser] = useState(undefined);
 
-    const { data, loading } = useFetch(`/campista/1`);
+    useEffect(() => {
+        const user = AuthService.getCurrentUser();
+
+        
+    
+        if (user) {
+          setCurrentUser(user);
+          userService.getUserBoard(`/campista/${user.campistaId}`).then(
+            (res) => {
+                setData(res.data);
+                // console.log(res.data);
+            }
+          )
+        }
+
+        EventBus.on("logout", () => {
+            logOut();
+          });
+      
+          return () => {
+            EventBus.remove("logout");
+          };
+      }, []);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -73,7 +100,7 @@ const Header = () => {
                     <img src={logo} alt="" />
                 </div>
                 {
-                    data != null ? (
+                    data.nome != undefined ? (
                         <ul className="menuItems">
                             <li
                                 className="menuItem"
@@ -106,32 +133,7 @@ const Header = () => {
                     )
                 }
 
-                <div className="mobileMenuItems">
-                    <HiOutlineSearch onClick={openSearch} />
-                    {mobileMenu ? (
-                        <VscChromeClose onClick={() => setMobileMenu(false)} />
-                    ) : (
-                        <SlMenu onClick={openMobileMenu} />
-                    )}
-                </div>
             </ContentWrapper>
-            {showSearch && (
-                <div className="searchBar">
-                    <ContentWrapper>
-                        <div className="searchInput">
-                            <input
-                                type="text"
-                                placeholder="Search for a movie or tv show...."
-                                onChange={(e) => setQuery(e.target.value)}
-                                onKeyUp={searchQueryHandler}
-                            />
-                            <VscChromeClose
-                                onClick={() => setShowSearch(false)}
-                            />
-                        </div>
-                    </ContentWrapper>
-                </div>
-            )}
         </header>
     );
 };
