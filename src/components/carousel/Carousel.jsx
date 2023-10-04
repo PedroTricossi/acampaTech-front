@@ -60,7 +60,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                     <div className="carouselItems" ref={carouselContainer}>
                         {data?.map((item) => {
                             const banner = "src/assets/" + item.nome + ".jpeg";
-                                console.log(banner);
+                                // console.log(banner);
                             return (
                                 <div
                                     key={item.id}

@@ -57,7 +57,7 @@ const FormularioInscricao = () => {
     useEffect(() => {
         const user = AuthService.getCurrentUser();
 
-        console.log(user);
+        // console.log(user);
     
         if (user) {
           setCurrentUser(user);
@@ -65,14 +65,14 @@ const FormularioInscricao = () => {
           userService.getUserBoard(`/campista/${user.campistaId}`).then(
             (res) => {
                 setCampista(res.data);
-                console.log(res.data)
+                // console.log(res.data)
             }
           )
 
           userService.getUserBoard(`/inscricao/campista/${user.campistaId}`).then(
             (res) => {
                 setInscrito(res.data);
-                console.log(res.data)
+                // console.log(res.data)
             }
           )
           
@@ -89,15 +89,15 @@ const FormularioInscricao = () => {
         inscricao.campistaId = currentUser.campistaId;
         
         if(inscrito?.id === undefined){
-            console.log(inscricao);
+            // console.log(inscricao);
 
             await axios.post('http://localhost:8080/api/v1/inscricao', inscricao, { headers: authHeader() })
                 .then((response) => {
                 setResponse(response.data)
-                console.log(response.data)
+                // console.log(response.data)
                 })
             .catch(function (error) {
-            console.log(error);
+            // console.log(error);
             });
         } 
         // else {
@@ -115,9 +115,9 @@ const FormularioInscricao = () => {
 
         // alert("Voce se inscreveu com sucesso!!!")
 
-        // navigate(
-        //     `/`
-        // )
+        navigate(
+            `/`
+        )
       }
 
     return(
@@ -255,7 +255,7 @@ const FormularioInscricao = () => {
                             id="equipe"
                             placeholder="Digite a equipe que gostaria de trabalhar.."
                             onChange={onChangeHandlerEquipe}
-                            defaultValue={
+                            value={
                                 // @ts-ignore: Object is possibly 'null'.
                                 inscrito.equipePreferencia
                             }

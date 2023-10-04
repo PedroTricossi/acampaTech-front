@@ -9,7 +9,7 @@ const PostDataToApi = async (url, Postdata) => {
         const { data } = await axios.post(BASE_URL + url, Postdata);
         return data;
     } catch (err) {
-        console.log(err);
+        // console.log(err);
         return err;
     }
 };

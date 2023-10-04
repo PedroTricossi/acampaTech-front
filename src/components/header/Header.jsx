@@ -27,8 +27,6 @@ const Header = () => {
 
     useEffect(() => {
         const user = AuthService.getCurrentUser();
-
-        
     
         if (user) {
           setCurrentUser(user);
@@ -85,12 +83,7 @@ const Header = () => {
     };
 
     const navigationHandler = (type) => {
-        if (type === "incricoes") {
-            navigate("/minhasInscricoes");
-        } else {
-            navigate("/explore/tv");
-        }
-        setMobileMenu(false);
+        navigate(`/${type}`)
     };
 
     return (
@@ -104,7 +97,7 @@ const Header = () => {
                         <ul className="menuItems">
                             <li
                                 className="menuItem"
-                                onClick={() => navigationHandler("incricoes")}
+                                onClick={() => navigationHandler("minhasInscricoes")}
                             >
                                 Minhas Inscrições
                             </li>
@@ -119,13 +112,13 @@ const Header = () => {
                         <ul className="menuItems">
                         <li
                             className="menuItem"
-                            // onClick={() => navigationHandler("movie")}
+                            onClick={() => navigationHandler("minhasInscricoes")}
                         >
                             Minhas Inscrições
                         </li>
                         <li
                             className="menuItem"
-                            // onClick={() => navigationHandler("tv")}
+                            onClick={() => navigationHandler("login")}
                         >
                             Logar
                         </li>

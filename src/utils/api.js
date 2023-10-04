@@ -13,7 +13,7 @@ export const fetchDataFromApi = async (url, params) => {
         const { data } = await axios.get(BASE_URL + url);
         return data;
     } catch (err) {
-        console.log(err);
+        // console.log(err);
         return err;
     }
 };

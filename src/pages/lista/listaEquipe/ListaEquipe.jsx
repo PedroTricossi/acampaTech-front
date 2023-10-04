@@ -39,7 +39,7 @@ const ListaEquipe = () => {
                         <td>{item.dataNascimento}</td>
                         {
                             inscricoes.forEach((inscricao) => {
-                            console.log(inscricao.campistaId === 1 ? "true" : "false")
+                            // console.log(inscricao.campistaId === 1 ? "true" : "false")
                                 if(inscricao.campistaId === 1){
                             //         console.log("entrou")
                                     equipe = inscricao.equipePreferencia;

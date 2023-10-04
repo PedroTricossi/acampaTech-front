@@ -22,7 +22,7 @@ import AuthService from "./utils/auth.service";
 function App() {
     const dispatch = useDispatch();
     const { url } = useSelector((state) => state.home);
-    console.log(url);
+    // console.log(url);
     const [currentUser, setCurrentUser] = useState(undefined);
 
     useEffect(() => {

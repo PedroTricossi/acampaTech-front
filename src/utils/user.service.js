@@ -3,6 +3,8 @@ import authHeader from "./auth-header";
 
 const API_URL = "http://16.171.8.79:8080/api/v1";
 
+// const API_URL = "http://localhost:8080/api/v1";
+
 const getPublicContent = () => {
     return axios.get(API_URL);
   };

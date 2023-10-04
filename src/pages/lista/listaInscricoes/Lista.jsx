@@ -20,7 +20,7 @@ const Lista = () => {
     useEffect(() => {
         const user = AuthService.getCurrentUser();
 
-        console.log(user);
+        // console.log(user);
     
         if (user) {
           setCurrentUser(user);
@@ -46,10 +46,10 @@ const Lista = () => {
     function sumbitForm(id) {    
         axios.delete(`http://localhost:8080/api/v1/camp/inscricao/acampamento/${id}`)
         .then((response) => {
-        console.log(response.data)
+        // console.log(response.data)
         })
         .catch(function (error) {
-        console.log(error);
+        // console.log(error);
         });
       }
 

@@ -353,8 +353,8 @@ const SignUp = () => {
           </div>
 
           <div className="AcampamentoCes">
-            <input value = "Acampamento Ces" type = "checkbox" onChange = {handleChangeCheckbox} />
-            <span> Acampamento Ces </span>
+            <input value = "Acampamento CES" type = "checkbox" onChange = {handleChangeCheckbox} />
+            <span> Acampamento CES </span>
           </div>
 
           <div className="AcampamentoMirim">

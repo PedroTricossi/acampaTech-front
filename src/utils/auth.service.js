@@ -27,7 +27,7 @@ const register = (username, email, password, nome, nacionalidade, estadoCivil, e
     }
   }
 
-  console.log(data);
+  // console.log(data);
 
   return axios.post(API_URL + "signup", data );
 };
@@ -44,7 +44,7 @@ const login = (username, password) => {
         localStorage.setItem("user", JSON.stringify(response.data));
       }
 
-      console.log(response.data)
+      // console.log(response.data)
 
       return response.data;
     });

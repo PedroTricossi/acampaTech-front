@@ -30,11 +30,10 @@ const DetailsBanner = () => {
     useEffect(() => {
         const user = AuthService.getCurrentUser();
 
-        console.log(user);
+        // console.log(user);
     
         if (user) {
           setCurrentUser(user);
-          console.log("oii");
           userService.getUserBoard(`/acampamento/campista/${user.campistaId}/acampamento/${id}/permission`).then(
             (res) => {
                 setpodeTrabalhar(res.data);
