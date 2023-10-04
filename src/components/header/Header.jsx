@@ -112,9 +112,9 @@ const Header = () => {
                         <ul className="menuItems">
                         <li
                             className="menuItem"
-                            onClick={() => navigationHandler("minhasInscricoes")}
+                            onClick={() => navigationHandler("signup")}
                         >
-                            Minhas Inscrições
+                            Registrar
                         </li>
                         <li
                             className="menuItem"

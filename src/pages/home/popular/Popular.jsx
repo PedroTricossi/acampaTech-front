@@ -13,7 +13,7 @@ const Popular = () => {
     return (
         <div className="carouselSection">
             <ContentWrapper>
-                <span className="carouselTitle">Próximos Acampamentos</span>
+                <span className="carouselTitle">Acampamentos nos próximos 6 meses</span>
             </ContentWrapper>
             <Carousel
                 data={data}
