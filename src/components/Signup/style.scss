@@ -17,7 +17,7 @@
 .dashboard-login-dark .form {
   height: 140vh;
   left: 28%;
-  position: absolute;
+  position: relative;
   width: 30vw;
   top:100px;
 }
@@ -25,7 +25,7 @@
 .dashboard-login-dark .section-forgot {
   height: 17px;
   left: 27px;
-  position: absolute;
+  position: relative;
   top: 320px;
   width: 297px;
 }
@@ -38,7 +38,7 @@
   left: 165px;
   letter-spacing: 0;
   line-height: normal;
-  position: absolute;
+  position: relative;
   text-align: center;
   top: 0;
 }
@@ -51,7 +51,7 @@
   left: 25px;
   letter-spacing: 0;
   line-height: normal;
-  position: absolute;
+  position: relative;
   text-align: center;
   top: 0;
 }
@@ -61,7 +61,7 @@
   border-radius: 5px;
   height: 17px;
   left: 0;
-  position: absolute;
+  position: relative;
   top: 0;
   width: 18px;
 }
@@ -73,24 +73,25 @@
   box-sizing: border-box;
   height: 45px;
   left: 24px;
-  position: absolute;
-  top: 120vh;
+  position: relative;
   width: 32vw;
   color: #ffffff;
   font-family: "Lexend Deca-Regular", Helvetica;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0;
-  position: absolute;
+  position: relative;
   text-align: center;
   white-space: nowrap;
   margin-bottom: 30px;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 
 .dashboard-login-dark .password {
   height: 35px;
-  position: absolute;
+  position: relative;
   width: 32vw;
   background-color: #224957;
   border-radius: 10px;
@@ -100,8 +101,9 @@
   font-weight: 400;
   line-height: 20px;
   text-align: center;
-  top: 6vh;
   left: 25px;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 .dashboard-login-dark .password::placeholder {
@@ -132,8 +134,8 @@
   width: 32vw;
   position: relative;
   letter-spacing: 0;
-  top: 0;
   left: 25px;
+  margin-bottom: 1vh;
 }
 
 .dashboard-login-dark .username::placeholder {
@@ -162,7 +164,8 @@
   position: relative;
   text-align: center;
   width: 32vw;
-  top: 8vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
   left: 25px;
 }
 
@@ -179,8 +182,9 @@
   white-space: nowrap;
   top: 0%;
   width: 32vw;
-  position: absolute;
-  top: 18vh;
+  position: relative;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
   left: 25px;
 }
 
@@ -197,8 +201,9 @@
   white-space: nowrap;
   top: 0%;
   width: 32vw;
-  position: absolute;
-  top: 24vh;
+  position: relative;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
   left: 25px;
 }
 
@@ -215,8 +220,9 @@
   white-space: nowrap;
   top: 0%;
   width: 32vw;
-  position: absolute;
-  top: 30vh;
+  position: relative;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
   left: 25px;
 }
 
@@ -233,8 +239,9 @@
   white-space: nowrap;
   top: 0%;
   width: 32vw;
-  position: absolute;
-  top: 36vh;
+  position: relative;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
   left: 25px;
 }
 
@@ -251,8 +258,9 @@
   white-space: nowrap;
   top: 0%;
   width: 32vw;
-  position: absolute;
-  top: 42vh;
+  position: relative;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
   left: 25px;
 }
 
@@ -269,8 +277,9 @@
   white-space: nowrap;
   top: 0%;
   width: 32vw;
-  position: absolute;
-  top: 48vh;
+  position: relative;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
   left: 25px;
 }
 
@@ -287,9 +296,10 @@
   white-space: nowrap;
   top: 0%;
   width: 32vw;
-  position: absolute;
+  position: relative;
   left: 25px;
-  top: 54vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 .dashboard-login-dark .cpf  {
@@ -305,9 +315,10 @@
   white-space: nowrap;
   top: 0%;
   width: 32vw;
-  position: absolute;
+  position: relative;
   left: 25px;
-  top: 60vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 .dashboard-login-dark .endereco  {
@@ -323,9 +334,10 @@
   white-space: nowrap;
   top: 0%;
   width: 32vw;
-  position: absolute;
+  position: relative;
   left: 25px;
-  top: 66vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 .dashboard-login-dark .bairro  {
@@ -341,9 +353,10 @@
   white-space: nowrap;
   top: 0%;
   width: 32vw;
-  position: absolute;
+  position: relative;
   left: 25px;
-  top: 72vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 .dashboard-login-dark .cidade  {
@@ -359,9 +372,10 @@
   white-space: nowrap;
   top: 0%;
   width: 32vw;
-  position: absolute;
+  position: relative;
   left: 25px;
-  top: 78vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 .dashboard-login-dark .estado  {
@@ -377,9 +391,10 @@
   white-space: nowrap;
   top: 0%;
   width: 32vw;
-  position: absolute;
+  position: relative;
   left: 25px;
-  top: 84vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 .dashboard-login-dark .cep  {
@@ -395,9 +410,10 @@
   white-space: nowrap;
   top: 0%;
   width: 32vw;
-  position: absolute;
+  position: relative;
   left: 25px;
-  top: 90vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 .dashboard-login-dark .h3CheckBox  {
@@ -405,9 +421,10 @@
   font-family: "Lexend Deca-Regular", Helvetica;
   font-weight: 400;
   white-space: nowrap;
-  position: absolute;
+  position: relative;
   left: 25px;
-  top: 96vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 .dashboard-login-dark .AcampamentoJuvenil  {
@@ -420,9 +437,10 @@
   line-height: 20px;
   white-space: nowrap;
   top: 0%;
-  position: absolute;
+  position: relative;
   left: 25px;
-  top: 98.5vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 .dashboard-login-dark .AcampamentoCasais  {
@@ -435,9 +453,10 @@
   line-height: 20px;
   white-space: nowrap;
   top: 0%;
-  position: absolute;
+  position: relative;
   left: 25px;
-  top: 101vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 .dashboard-login-dark .AcampamentoJoam  {
@@ -450,9 +469,10 @@
   line-height: 20px;
   white-space: nowrap;
   top: 0%;
-  position: absolute;
+  position: relative;
   left: 25px;
-  top: 103.5vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 .dashboard-login-dark .AcampamentoFac  {
@@ -465,9 +485,10 @@
   line-height: 20px;
   white-space: nowrap;
   top: 0%;
-  position: absolute;
+  position: relative;
   left: 25px;
-  top: 106vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 .dashboard-login-dark .AcampamentoCes  {
@@ -480,9 +501,10 @@
   line-height: 20px;
   white-space: nowrap;
   top: 0%;
-  position: absolute;
+  position: relative;
   left: 25px;
-  top: 108.5vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 .dashboard-login-dark .AcampamentoMirim  {
@@ -495,9 +517,10 @@
   line-height: 20px;
   white-space: nowrap;
   top: 0%;
-  position: absolute;
+  position: relative;
   left: 25px;
-  top: 111vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 .dashboard-login-dark .AcampamentoMaanaim  {
@@ -510,9 +533,10 @@
   line-height: 20px;
   white-space: nowrap;
   top: 0%;
-  position: absolute;
+  position: relative;
   left: 25px;
-  top: 113.5vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 .dashboard-login-dark .AcampamentoMulheres  {
@@ -525,9 +549,10 @@
   line-height: 20px;
   white-space: nowrap;
   top: 0%;
-  position: absolute;
+  position: relative;
   left: 25px;
-  top: 116vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 
 .dashboard-login-dark .text-wrapper-5 {

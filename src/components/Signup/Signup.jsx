@@ -174,10 +174,7 @@ const SignUp = () => {
     <div className="dashboard-login-dark">
       <div className="div">
       <Form onSubmit={handleRegister} ref={form}>
-        <div className="form">
-
-          <button className="login-btn" >login</button>  
-
+        <div className="form">  
           <input className="username"
                         type="text"
                         name="username"
@@ -371,6 +368,8 @@ const SignUp = () => {
             <input value = "Acampamento Muheres" type = "checkbox" onChange = {handleChangeCheckbox} />
             <span> Acampamento de Muheres </span>
           </div>
+
+          <button className="login-btn" >login</button>
 
         </div>
         <CheckButton style={{ display: "none" }} ref={checkBtn} />
