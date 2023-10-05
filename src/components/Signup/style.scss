@@ -1,3 +1,5 @@
+
+
 .dashboard-login-dark {
   background-color: #093545;
   display: flex;
@@ -13,13 +15,22 @@
   width: 1280px;
 }
 
+  .dashboard-login-dark .form {
+    height: 140vh;
+    left: 28%;
+    position: relative;
+    width: 36vw;
+    top:100px;
+  }
 
-.dashboard-login-dark .form {
-  height: 140vh;
-  left: 28%;
-  position: relative;
-  width: 30vw;
-  top:100px;
+@media screen and (max-width:800px){
+  .dashboard-login-dark .form {
+    height: 140vh;
+    left: 28%;
+    position: relative;
+    width: 56vw;
+    top:100px;
+  }
 }
 
 .dashboard-login-dark .section-forgot {
@@ -48,7 +59,7 @@
   font-family: "Montserrat-Medium", Helvetica;
   font-size: 14px;
   font-weight: 500;
-  left: 25px;
+  
   letter-spacing: 0;
   line-height: normal;
   position: relative;
@@ -72,7 +83,6 @@
   box-shadow: 0px 4px 4px #0000004c;
   box-sizing: border-box;
   height: 45px;
-  left: 24px;
   position: relative;
   width: 32vw;
   color: #ffffff;
@@ -83,7 +93,6 @@
   position: relative;
   text-align: center;
   white-space: nowrap;
-  margin-bottom: 30px;
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
@@ -101,7 +110,7 @@
   font-weight: 400;
   line-height: 20px;
   text-align: center;
-  left: 25px;
+  
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
@@ -134,7 +143,7 @@
   width: 32vw;
   position: relative;
   letter-spacing: 0;
-  left: 25px;
+  
   margin-bottom: 1vh;
 }
 
@@ -166,7 +175,7 @@
   width: 32vw;
   margin-bottom: 1vh;
   margin-top: 1vh;
-  left: 25px;
+  
 }
 
 .dashboard-login-dark .email  {
@@ -185,7 +194,7 @@
   position: relative;
   margin-bottom: 1vh;
   margin-top: 1vh;
-  left: 25px;
+  
 }
 
 .dashboard-login-dark .nacionalidade  {
@@ -204,7 +213,7 @@
   position: relative;
   margin-bottom: 1vh;
   margin-top: 1vh;
-  left: 25px;
+  
 }
 
 .dashboard-login-dark .estadoCivil  {
@@ -223,7 +232,7 @@
   position: relative;
   margin-bottom: 1vh;
   margin-top: 1vh;
-  left: 25px;
+  
 }
 
 .dashboard-login-dark .escolaridade  {
@@ -242,7 +251,7 @@
   position: relative;
   margin-bottom: 1vh;
   margin-top: 1vh;
-  left: 25px;
+  
 }
 
 .dashboard-login-dark .dataNascimento  {
@@ -261,7 +270,7 @@
   position: relative;
   margin-bottom: 1vh;
   margin-top: 1vh;
-  left: 25px;
+  
 }
 
 .dashboard-login-dark .rg  {
@@ -280,7 +289,7 @@
   position: relative;
   margin-bottom: 1vh;
   margin-top: 1vh;
-  left: 25px;
+  
 }
 
 .dashboard-login-dark .orgaoExpeditor  {
@@ -297,7 +306,7 @@
   top: 0%;
   width: 32vw;
   position: relative;
-  left: 25px;
+  
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
@@ -316,7 +325,7 @@
   top: 0%;
   width: 32vw;
   position: relative;
-  left: 25px;
+  
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
@@ -335,7 +344,7 @@
   top: 0%;
   width: 32vw;
   position: relative;
-  left: 25px;
+  
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
@@ -354,7 +363,7 @@
   top: 0%;
   width: 32vw;
   position: relative;
-  left: 25px;
+  
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
@@ -373,7 +382,7 @@
   top: 0%;
   width: 32vw;
   position: relative;
-  left: 25px;
+  
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
@@ -392,7 +401,7 @@
   top: 0%;
   width: 32vw;
   position: relative;
-  left: 25px;
+  
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
@@ -411,7 +420,7 @@
   top: 0%;
   width: 32vw;
   position: relative;
-  left: 25px;
+  
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
@@ -422,7 +431,7 @@
   font-weight: 400;
   white-space: nowrap;
   position: relative;
-  left: 25px;
+  
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
@@ -438,7 +447,7 @@
   white-space: nowrap;
   top: 0%;
   position: relative;
-  left: 25px;
+  
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
@@ -454,7 +463,7 @@
   white-space: nowrap;
   top: 0%;
   position: relative;
-  left: 25px;
+  
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
@@ -470,7 +479,7 @@
   white-space: nowrap;
   top: 0%;
   position: relative;
-  left: 25px;
+  
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
@@ -486,7 +495,7 @@
   white-space: nowrap;
   top: 0%;
   position: relative;
-  left: 25px;
+  
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
@@ -502,7 +511,7 @@
   white-space: nowrap;
   top: 0%;
   position: relative;
-  left: 25px;
+  
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
@@ -518,7 +527,7 @@
   white-space: nowrap;
   top: 0%;
   position: relative;
-  left: 25px;
+  
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
@@ -534,7 +543,7 @@
   white-space: nowrap;
   top: 0%;
   position: relative;
-  left: 25px;
+  
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
@@ -550,10 +559,504 @@
   white-space: nowrap;
   top: 0%;
   position: relative;
-  left: 25px;
+  
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
+
+
+@media screen and (max-width: 800px){
+  .dashboard-login-dark .login-btn {
+    background-color: #19ae64;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #0000004c;
+    box-sizing: border-box;
+    height: 45px;
+    left: 24px;
+    position: relative;
+    width: 50vw;
+    color: #ffffff;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    margin-bottom: 30px;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+  
+  
+  .dashboard-login-dark .password {
+    height: 35px;
+    position: relative;
+    width: 50vw;
+    background-color: #224957;
+    border-radius: 10px;
+    color: #ffffff;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+  
+  .dashboard-login-dark .password::placeholder {
+    color: #ffffff;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 21px;
+    letter-spacing: 3;
+    line-height: 20px;
+    position: relative;
+    text-align: center;
+    top: 13px;
+    white-space: nowrap;
+  }
+  
+  .dashboard-login-dark .username  {
+    color: #ffffff;
+    height: 35px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #224957;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    width: 50vw;
+    position: relative;
+    letter-spacing: 0;
+    
+    margin-bottom: 1vh;
+  }
+  
+  .dashboard-login-dark .username::placeholder {
+    color: #ffffff;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    left: 18px;
+    letter-spacing: 10px;
+    line-height: 20px;
+    position: relative;
+    text-align: center;
+    top: 12px;
+    white-space: nowrap;
+  }
+  
+  .dashboard-login-dark .nome  {
+    color: #ffffff;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    height: 35px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #224957;
+    border-radius: 10px;
+    line-height: 20px;
+    position: relative;
+    text-align: center;
+    width: 50vw;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+    
+  }
+  
+  .dashboard-login-dark .email  {
+    color: #ffffff;
+    height: 35px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #224957;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    top: 0%;
+    width: 50vw;
+    position: relative;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+    
+  }
+  
+  .dashboard-login-dark .nacionalidade  {
+    color: #ffffff;
+    height: 35px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #224957;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    top: 0%;
+    width: 50vw;
+    position: relative;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+    
+  }
+  
+  .dashboard-login-dark .estadoCivil  {
+    color: #ffffff;
+    height: 35px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #224957;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    top: 0%;
+    width: 50vw;
+    position: relative;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+    
+  }
+  
+  .dashboard-login-dark .escolaridade  {
+    color: #ffffff;
+    height: 35px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #224957;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    top: 0%;
+    width: 50vw;
+    position: relative;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+    
+  }
+  
+  .dashboard-login-dark .dataNascimento  {
+    color: #ffffff;
+    height: 35px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #224957;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    top: 0%;
+    width: 50vw;
+    position: relative;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+    
+  }
+  
+  .dashboard-login-dark .rg  {
+    color: #ffffff;
+    height: 35px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #224957;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    top: 0%;
+    width: 50vw;
+    position: relative;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+    
+  }
+  
+  .dashboard-login-dark .orgaoExpeditor  {
+    color: #ffffff;
+    height: 35px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #224957;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    top: 0%;
+    width: 50vw;
+    position: relative;
+    
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+  
+  .dashboard-login-dark .cpf  {
+    color: #ffffff;
+    height: 35px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #224957;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    top: 0%;
+    width: 50vw;
+    position: relative;
+    
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+  
+  .dashboard-login-dark .endereco  {
+    color: #ffffff;
+    height: 35px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #224957;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    top: 0%;
+    width: 50vw;
+    position: relative;
+    
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+  
+  .dashboard-login-dark .bairro  {
+    color: #ffffff;
+    height: 35px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #224957;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    top: 0%;
+    width: 50vw;
+    position: relative;
+    
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+  
+  .dashboard-login-dark .cidade  {
+    color: #ffffff;
+    height: 35px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #224957;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    top: 0%;
+    width: 50vw;
+    position: relative;
+    
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+  
+  .dashboard-login-dark .estado  {
+    color: #ffffff;
+    height: 35px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #224957;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    top: 0%;
+    width: 50vw;
+    position: relative;
+    
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+  
+  .dashboard-login-dark .cep  {
+    color: #ffffff;
+    height: 35px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #224957;
+    border-radius: 10px;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    top: 0%;
+    width: 50vw;
+    position: relative;
+    
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+  
+  .dashboard-login-dark .h3CheckBox  {
+    color: #ffffff;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-weight: 400;
+    white-space: nowrap;
+    position: relative;
+    
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+  
+  .dashboard-login-dark .AcampamentoJuvenil  {
+    color: #ffffff;
+    height: 20px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 10px;
+    line-height: 20px;
+    white-space: nowrap;
+    top: 0%;
+    position: relative;
+    
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+  
+  .dashboard-login-dark .AcampamentoCasais  {
+    color: #ffffff;
+    height: 20px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 10px;
+    line-height: 20px;
+    white-space: nowrap;
+    top: 0%;
+    position: relative;
+    
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+  
+  .dashboard-login-dark .AcampamentoJoam  {
+    color: #ffffff;
+    height: 20px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 10px;
+    line-height: 20px;
+    white-space: nowrap;
+    top: 0%;
+    position: relative;
+    
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+  
+  .dashboard-login-dark .AcampamentoFac  {
+    color: #ffffff;
+    height: 20px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 10px;
+    line-height: 20px;
+    white-space: nowrap;
+    top: 0%;
+    position: relative;
+    
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+  
+  .dashboard-login-dark .AcampamentoCes  {
+    color: #ffffff;
+    height: 20px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 10px;
+    line-height: 20px;
+    white-space: nowrap;
+    top: 0%;
+    position: relative;
+    
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+  
+  .dashboard-login-dark .AcampamentoMirim  {
+    color: #ffffff;
+    height: 20px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 10px;
+    line-height: 20px;
+    white-space: nowrap;
+    top: 0%;
+    position: relative;
+    
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+  
+  .dashboard-login-dark .AcampamentoMaanaim  {
+    color: #ffffff;
+    height: 20px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 10px;
+    line-height: 20px;
+    white-space: nowrap;
+    top: 0%;
+    position: relative;
+    
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+  
+  .dashboard-login-dark .AcampamentoMulheres  {
+    color: #ffffff;
+    height: 20px;
+    font-family: "Lexend Deca-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 10px;
+    line-height: 20px;
+    white-space: nowrap;
+    top: 0%;
+    position: relative;
+    
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+  
+  }
+
 
 .dashboard-login-dark .text-wrapper-5 {
   color: #ffffff;
