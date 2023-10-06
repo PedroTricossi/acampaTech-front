@@ -44,6 +44,8 @@ const SignUp = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
+  const [errors, setErrors] = useState({});
+
   const onChangeUsername = (e) => {
     const username = e.target.value;
     setUsername(username);
@@ -131,20 +133,91 @@ const SignUp = () => {
        setAcampamentosRealizados(acampamentosRealizados.filter((item) => item !== e.target.value));
     }
 
-    
  }
+
+ const validateValues = () => {
+  let errors = {};
+
+  if (username.length < 5) {
+    errors.username = "O nome de usuário deve ser maior que 4 caractŕres";
+  }
+
+  let passwordValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(\W|_)).{5,}$/.test(password);
+  if (!passwordValidation){
+    errors.password = "A senha deve conter pelo menos: "
+    + "uma letra maiúscula\n"
+    + "uma letra minúscula\n"
+    + "um número\n"
+    + "um caractér especial (!, @, #, $, %, ...) \n";
+  }
+
+  let emailValidation = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+
+  if(!emailValidation){
+    errors.email = "Email invalido";
+  }
+
+  if(nome.length <= 0){
+    errors.nome = "Nome invalido"
+  }
+
+  if(nacionalidade.length <= 0){
+    errors.nacionalidade = "nacionalidade invalida"
+  }
+
+  if(estadoCivil.length <= 0){
+    errors.estadoCivil = "Estado civil invalido"
+  }
+
+  if(escolaridade.length <= 0){
+    errors.escolaridade = "Selecione sua escolaridade"
+  }
+
+
+  setRg(rg.toUpperCase().replace(/\D/g,""))
+  if(!(rg.length===8 || rg.length===9)){
+    console.log("oii");
+    errors.rg = "RG invalido";
+  }
+
+  if(orgaoExpeditor.length <= 0){
+    errors.orgaoExpeditor = "Orgao expeditor invalido"
+  }
+
+  setCpf(cpf.toUpperCase().replace(/\D/g,""))
+  if(cpf.length !== 11){
+    errors.cpf = "CPF invalido"	
+  } 
+
+  if(endereco.length <= 0){
+    errors.endereco = "endereco invalido"
+  }
+
+  if(bairro.length <= 0){
+    errors.bairro = "bairro invalido"
+  }
+
+  if(cidade.length <= 0){
+    errors.cidade = "cidade invalido"
+  }
+
+  if(estado.length <= 0){
+    errors.estado = "estado invalido"
+  }
+
+  if(cep.length <= 0){
+    errors.cep = "cep invalido"
+  }
+
+  return errors;
+};
 
   const handleRegister = (e) => {
     e.preventDefault();
 
-    setMessage("");
-    setLoading(true);
+    setErrors(validateValues());
 
-    form.current.validateAll();
-
-    // console.log(acampamentosRealizados)
-
-    if (checkBtn.current.context._errors.length === 0) {
+    if (Object.keys(errors).length === 0) {
       AuthService.register(username, email, password, nome, nacionalidade, estadoCivil, escolaridade,
         dataNascimento, rg, orgaoExpeditor, cpf, endereco, bairro, cidade, estado, cep, acampamentosRealizados).then(
         (response) => {
@@ -183,6 +256,9 @@ const SignUp = () => {
                         validations={[required]}
                         placeholder="Nome de Usuario">
           </input>
+          {errors.username ? 
+          (<p className="error">{errors.username}</p>) 
+          : null}
 
           <input className="password"
             type="password"
@@ -192,8 +268,9 @@ const SignUp = () => {
             validations={[required]}
             placeholder="Senha">
           </input>
-
-
+          {errors.password ? 
+          (<p className="error">{errors.password}</p>) 
+          : null}
 
           <input className="email"
                         type="text"
@@ -203,6 +280,9 @@ const SignUp = () => {
                         validations={[required]}
                         placeholder="Email">
           </input>
+          {errors.email ? 
+          (<p className="error">{errors.email}</p>) 
+          : null}
 
           <input className="nome"
                         type="text"
@@ -212,6 +292,9 @@ const SignUp = () => {
                         validations={[required]}
                         placeholder="Nome Completo">
           </input>
+          {errors.nome ? 
+          (<p className="error">{errors.nome}</p>) 
+          : null}
 
            <input className="nacionalidade"
                         type="text"
@@ -221,6 +304,9 @@ const SignUp = () => {
                         validations={[required]}
                         placeholder="Nacionalidade">
           </input>
+          {errors.nacionalidade ? 
+          (<p className="error">{errors.nacionalidade}</p>) 
+          : null}
 
           <input className="estadoCivil"
                         type="text"
@@ -230,6 +316,9 @@ const SignUp = () => {
                         validations={[required]}
                         placeholder="Estado Civil">
           </input>
+          {errors.estadoCivil ? 
+          (<p className="error">{errors.estadoCivil}</p>) 
+          : null}
 
           <select name="escolaridade" className="escolaridade"
           value={escolaridade} onChange={onChangeEscolaridade}>
@@ -243,6 +332,9 @@ const SignUp = () => {
             <option value="Mestre">Mestre</option>
             <option value="Doutor">Doutor</option>
           </select>
+          {errors.escolaridade ? 
+          (<p className="error">{errors.escolaridade}</p>) 
+          : null}
 
 
 
@@ -254,6 +346,9 @@ const SignUp = () => {
                         validations={[required]}
                         placeholder="Data de nascimento">
           </input>
+          {errors.dataNascimento ? 
+          (<p className="error">{errors.dataNascimento}</p>) 
+          : null}
 
           <input className="rg"
                         type="text"
@@ -263,6 +358,9 @@ const SignUp = () => {
                         validations={[required]}
                         placeholder="RG">
           </input>
+          {errors.rg ? 
+          (<p className="error">{errors.rg}</p>) 
+          : null}
 
           <input className="orgaoExpeditor"
                         type="text"
@@ -272,6 +370,9 @@ const SignUp = () => {
                         validations={[required]}
                         placeholder="Orgão Expeditor">
           </input>
+          {errors.orgaoExpeditor ? 
+          (<p className="error">{errors.orgaoExpeditor}</p>) 
+          : null}
 
           <input className="cpf"
                         type="text"
@@ -281,6 +382,9 @@ const SignUp = () => {
                         validations={[required]}
                         placeholder="CPF">
           </input>
+          {errors.cpf ? 
+          (<p className="error">{errors.cpf}</p>) 
+          : null}
 
           <input className="endereco"
                         type="text"
@@ -290,6 +394,9 @@ const SignUp = () => {
                         validations={[required]}
                         placeholder="Endereço">
           </input>
+          {errors.endereco ? 
+          (<p className="error">{errors.endereco}</p>) 
+          : null}
 
           <input className="bairro"
                         type="text"
@@ -299,6 +406,9 @@ const SignUp = () => {
                         validations={[required]}
                         placeholder="Bairro">
           </input>
+          {errors.bairro ? 
+          (<p className="error">{errors.bairro}</p>) 
+          : null}
 
           <input className="cidade"
                         type="text"
@@ -308,6 +418,9 @@ const SignUp = () => {
                         validations={[required]}
                         placeholder="Cidade">
           </input>
+          {errors.cidade ? 
+          (<p className="error">{errors.cidade}</p>) 
+          : null}
 
           <input className="estado"
                         type="text"
@@ -317,6 +430,9 @@ const SignUp = () => {
                         validations={[required]}
                         placeholder="Estado">
           </input>
+          {errors.estado ? 
+          (<p className="error">{errors.estado}</p>) 
+          : null}
 
           <input className="cep"
                         type="text"
@@ -326,6 +442,9 @@ const SignUp = () => {
                         validations={[required]}
                         placeholder="CEP">
           </input>
+          {errors.cep ? 
+          (<p className="error">{errors.cep}</p>) 
+          : null}
 
           <h3 className="h3CheckBox" >Marque quais acampamentos você já fez:</h3>
 

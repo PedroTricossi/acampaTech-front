@@ -23,6 +23,12 @@
     top:100px;
   }
 
+  .dashboard-login-dark .error {
+    color: #FF9494;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 12px;
+  }
+
 @media screen and (max-width:800px){
   .dashboard-login-dark .form {
     height: 140vh;
