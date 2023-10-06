@@ -75,29 +75,9 @@ const Login = () => {
       <div className="div">
       <Form onSubmit={handleLogin} ref={form}>
         <div className="form">
-          <div className="section-forgot">
-          <div className="text-wrapper">Forgot password?</div>
-          <div className="text-wrapper-2">Remember me</div>
-          <div className="rectangle" />
-          </div>
+          <div className="center">
 
-          {/* <button className="login-btn">
-            <div className="login-wrapper">
-            <div className="login">Login</div>
-            </div>
-          </button> */}
-
-          <button className="login-btn" >login</button>  
-
-          <input className="password"
-          type="password"
-          name="password"
-          value={password}
-          onChange={onChangePassword}
-          validations={[required]}
-          placeholder="Senha">
-          {/* <div className="text-wrapper-3">Password</div> */}
-          </input>
+         <div className="text-wrapper-5">Login</div> 
 
           <input className="username"
                         type="text"
@@ -108,7 +88,29 @@ const Login = () => {
                         placeholder="usuario">
           </input>
 
-          <div className="text-wrapper-5">Login</div> 
+           
+
+          <input className="password"
+              type="password"
+              name="password"
+              value={password}
+              onChange={onChangePassword}
+              validations={[required]}
+              placeholder="Senha">
+          </input>
+
+
+
+          {/* <div className="section-forgot">
+          <div className="text-wrapper">Forgot password?</div>
+          <div className="text-wrapper-2">Remember me</div>
+          <div className="rectangle" />
+          </div> */}
+
+          <button className="login-btn" >login</button> 
+          </div>
+
+          
         </div>
         <CheckButton style={{ display: "none" }} ref={checkBtn} />
         </Form>
