@@ -1,8 +1,8 @@
 import axios from "axios";
 
-// const API_URL = "http://16.171.8.79:8080/api/auth/";
+const API_URL = "http://16.171.8.79:8080/api/auth/";
 
-const API_URL = "http://localhost:8080/api/auth/";
+// const API_URL = "http://localhost:8080/api/auth/";
 
 const register = (username, email, password, nome, nacionalidade, estadoCivil, escolaridade,
   dataNascimento, rg, orgaoExpeditor, cpf, endereco, bairro, cidade, estado, cep, acampamentosRealizados) => {
