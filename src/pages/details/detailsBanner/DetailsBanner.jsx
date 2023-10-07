@@ -95,7 +95,8 @@ const DetailsBanner = () => {
                                         
                                         {
                                         data.inscricoesAbertas ? (
-                                            currentUser.nome === undefined ? (
+                                            currentUser.username === undefined ? (
+                                                
                                                 <div className="playbtn"
                                                 onClick={() => {navigate(`/login`)}}
                                             >
