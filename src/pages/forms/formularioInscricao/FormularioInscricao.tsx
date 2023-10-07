@@ -91,7 +91,7 @@ const FormularioInscricao = () => {
         if(inscrito?.id === undefined){
             // console.log(inscricao);
 
-            await axios.post('http://localhost:8080/api/v1/inscricao', inscricao, { headers: authHeader() })
+            await axios.post('http://16.171.8.79:8080/api/v1/inscricao', inscricao, { headers: authHeader() })
                 .then((response) => {
                 setResponse(response.data)
                 // console.log(response.data)
