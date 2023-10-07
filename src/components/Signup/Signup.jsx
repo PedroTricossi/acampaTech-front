@@ -309,14 +309,14 @@ const SignUp = () => {
           (<p className="error">{errors.nacionalidade}</p>) 
           : null}
 
-          <input className="estadoCivil"
-                        type="text"
-                        name="estadoCivil"
-                        value={estadoCivil}
-                        onChange={onChangeEstadoCivil}
-                        validations={[required]}
-                        placeholder="Estado Civil">
-          </input>
+          <select name="estadoCivil" className="estadoCivil"
+          value={estadoCivil} onChange={onChangeEstadoCivil}>
+            <option value="">Selecione seu Estado civil</option>
+            <option value="Solteiro (a)">Solteiro (a)</option>
+            <option value="Casado (a)">Casado (a)</option>
+            <option value="Divorciado (a)">Divorciado (a)</option>
+            <option value="Viúvo (a)">Viúvo (a)</option>
+          </select>
           {errors.estadoCivil ? 
           (<p className="error">{errors.estadoCivil}</p>) 
           : null}
