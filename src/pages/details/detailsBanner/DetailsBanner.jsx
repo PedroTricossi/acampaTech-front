@@ -29,15 +29,12 @@ const DetailsBanner = () => {
 
     useEffect(() => {
         const user = AuthService.getCurrentUser();
-
-        // console.log(user);
     
         if (user) {
           setCurrentUser(user);
           userService.getUserBoard(`/acampamento/campista/${user.campistaId}/acampamento/${id}/permission`).then(
             (res) => {
                 setpodeTrabalhar(res.data);
-                console.log(res.data)
             }
           )
           
@@ -59,6 +56,7 @@ const DetailsBanner = () => {
         <div className="detailsBanner">
             {
             !loading ? (
+                
                 <>
                     {
                     !!data && (
@@ -88,18 +86,28 @@ const DetailsBanner = () => {
                                         <div className="title">
                                             {`${
                                                 data.nome 
-                                            } (${dayjs(
-                                                data.data_inicio
-                                            ).format("YYYY")})`}
+                                            }`}
                                         </div>
                                         <div className="subtitle">
                                             {data.tema}
                                         </div>
                                         
+                                        
                                         {
-                                        !loading ? (
-                                            podeTrabalhar ? (<div
-                                                className="playbtn"
+                                        data.inscricoesAbertas ? (
+                                            currentUser.nome == undefined ? (
+                                                <div className="playbtn"
+                                                onClick={() => {navigate(`/login`)}}
+                                            >
+                                                <button className="text">
+                                                    <FaCampground />
+                                                        Clique aqui para fazer seu Login
+                                                </button>
+                                                </div>
+                                            )
+                                            : (
+                                            podeTrabalhar ? (
+                                            <div className="playbtn"
                                                     onClick={() => {navigate(`/inscricao/${id}/${currentUser.id}`)}}
                                                 >
                                                     <button className="text">
@@ -117,17 +125,16 @@ const DetailsBanner = () => {
                                             </div>
 
                                             )
+                                            )
                                         ) : (
-                                            <div>
-
+                                            <div className="warning">
+                                                As incrições para o acampamento logo estarão abertas!
                                             </div>
                                         )
-                                    }
+                                        
+                                        }
                                     
                                         <div className="overview">
-                                            <div className="heading">
-                                                Overview
-                                            </div>
                                             <div className="description">
                                                 {data.tema}
                                             </div>
@@ -155,10 +162,20 @@ const DetailsBanner = () => {
                                                     </span>
                                                     <span className="text">
                                                         {dayjs(
-                                                            data.data_inicio
+                                                            data.dataInicio
+                                                        ).format("DD/MM/YYYY")}
+                                                    </span>
+
+                                                    <span className="text bold">
+                                                        Data Fim:{" "}
+                                                    </span>
+                                                    <span className="text">
+                                                        {dayjs(
+                                                            data.dataFim
                                                         ).format("DD/MM/YYYY")}
                                                     </span>
                                                 </div>
+                                                
                                             )}
 
                                             {data.data_inicio && (

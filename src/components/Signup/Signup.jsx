@@ -223,6 +223,7 @@ const SignUp = () => {
         (response) => {
           setMessage(response.data.message);
           setSuccessful(true);
+          alert("Cadastro realizado com Sucesso!");
           navigate("/login");
           window.location.reload();
         },

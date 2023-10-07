@@ -101,11 +101,13 @@ const Login = () => {
 
 
 
-          {/* <div className="section-forgot">
-          <div className="text-wrapper">Forgot password?</div>
-          <div className="text-wrapper-2">Remember me</div>
-          <div className="rectangle" />
-          </div> */}
+          {
+          <div className="section-forgot">
+            <div className="text-wrapper">Ainda não tem cadastro?    
+              <a href="/signup" className="link">  Clique aqui</a>
+            </div>
+          </div> 
+          }
 
           <button className="login-btn" >login</button> 
           </div>
